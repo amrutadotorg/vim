@@ -1,17 +1,24 @@
 call plug#begin()
 Plug 'sickill/vim-monokai'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'sainnhe/sonokai'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
+Plug 'sheerun/vim-polyglot'
 "ALE (Asynchronous Lint Engine) is a comprehensive code analysis plugin for Vim.
-Plug 'w0rp/ale'	
+Plug 'w0rp/ale'
 call plug#end()
 syntax enable
+set nocompatible
 
 try
-  colorscheme monokai
+  colorscheme sonokai
   catch
 endtry
+
+au! BufNewFile,BufReadPost *.{yaml,yml,config} set filetype=yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 "lightline settings"
 set laststatus=2
