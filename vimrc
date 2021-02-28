@@ -1,4 +1,5 @@
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"vim +PlugUpgrade +PlugUpdate +qa!
 call plug#begin()
 Plug 'sickill/vim-monokai'
 Plug 'phanviet/vim-monokai-pro'
