@@ -1,21 +1,23 @@
-"curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"vim +PlugUpgrade +PlugUpdate +qa!
 call plug#begin()
-Plug 'sickill/vim-monokai'
-Plug 'phanviet/vim-monokai-pro'
-Plug 'sainnhe/sonokai'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-sensible'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot'
-"ALE (Asynchronous Lint Engine) is a comprehensive code analysis plugin for Vim.
-Plug 'w0rp/ale'
+Plug 'vim-scripts/crontab.vim'
+Plug 'oblitum/rainbow'
+Plug 'patstockwell/vim-monokai-tasty'
+Plug 'tpope/vim-commentary'
 call plug#end()
-syntax enable
-set nocompatible
 
+syntax enable
+set termguicolors
+let g:rainbow_active = 1
+let g:vim_monokai_tasty_italic = 1
+let g:lightline = { 'colorscheme': 'monokai_tasty' }
+
+set nocompatible
 try
-  colorscheme sonokai
+  colorscheme vim-monokai-tasty
   catch
 endtry
 
@@ -30,8 +32,4 @@ set noshowmode
 autocmd FileType php nnoremap <F5> <Esc>:w<CR>:!clear;wp eval-file %<CR>
 autocmd FileType python nnoremap <F5> <Esc>:w<CR>:!clear;python3 %<CR>
 map <C-o> :NERDTreeToggle<CR>
-
-"ALE
-let b:ale_linters = ['pyflakes', 'flake8', 'pylint']
-let b:ale_fixers = ['eslint']
-let b:ale_fix_on_save = 1
+noremap // :Commentary<cr>
