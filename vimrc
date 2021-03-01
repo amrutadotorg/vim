@@ -12,7 +12,7 @@ call plug#end()
 syntax enable
 set termguicolors
 let g:rainbow_active = 1
-let g:vim_monokai_tasty_italic = 1
+"let g:vim_monokai_tasty_italic = 1
 let g:lightline = { 'colorscheme': 'monokai_tasty' }
 
 set nocompatible
