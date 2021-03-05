@@ -33,3 +33,7 @@ autocmd FileType php nnoremap <F5> <Esc>:w<CR>:!clear;wp eval-file %<CR>
 autocmd FileType python nnoremap <F5> <Esc>:w<CR>:!clear;python3 %<CR>
 map <C-o> :NERDTreeToggle<CR>
 noremap // :Commentary<cr>
+nnoremap <S-Up>   :<C-u>silent! move-2<CR>==
+nnoremap <S-Down> :<C-u>silent! move+<CR>==
+xnoremap <S-Up>   :<C-u>silent! '<,'>move-2<CR>gv=gv
+xnoremap <S-Down> :<C-u>silent! '<,'>move'>+<CR>gv=gv
