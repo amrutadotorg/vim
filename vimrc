@@ -5,9 +5,10 @@ Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-scripts/crontab.vim'
-Plug 'oblitum/rainbow'
+Plug 'frazrepo/vim-rainbow'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'tpope/vim-commentary'
+Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 call plug#end()
 
 syntax enable
@@ -38,3 +39,13 @@ nnoremap <S-Up>   :<C-u>silent! move-2<CR>==
 nnoremap <S-Down> :<C-u>silent! move+<CR>==
 xnoremap <S-Up>   :<C-u>silent! '<,'>move-2<CR>gv=gv
 xnoremap <S-Down> :<C-u>silent! '<,'>move'>+<CR>gv=gv
+
+
+" Map y to use OSCYankOperator in normal mode
+nmap y <Plug>OSCYankOperator
+
+" Map yy to use OSCYankOperator on the current line in normal mode
+nmap yy y_
+
+" Map y to use OSCYankVisual in visual mode
+vmap y <Plug>OSCYankVisual
