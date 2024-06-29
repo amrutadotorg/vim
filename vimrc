@@ -11,17 +11,12 @@ Plug 'tpope/vim-commentary'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 call plug#end()
 
-syntax enable
-set termguicolors
-let g:rainbow_active = 1
-"let g:vim_monokai_tasty_italic = 1
-let g:lightline = { 'colorscheme': 'monokai_tasty' }
+syntax on
+colorscheme vim-monokai-tasty
+filetype on
+filetype plugin on
+filetype indent on
 
-set nocompatible
-try
-  colorscheme vim-monokai-tasty
-  catch
-endtry
 
 au! BufNewFile,BufReadPost *.{yaml,yml,config} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
