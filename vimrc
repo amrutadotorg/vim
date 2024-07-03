@@ -12,7 +12,7 @@ Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 call plug#end()
 
 syntax on
-colorscheme vim-monokai-tasty
+"colorscheme vim-monokai-tasty
 filetype on
 filetype plugin on
 filetype indent on
