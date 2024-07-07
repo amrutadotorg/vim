@@ -22,23 +22,6 @@ au! BufNewFile,BufReadPost *.{yaml,yml,config} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 expandtab
 
-" Function to save cursor position, reindent, and restore cursor position
-function! PreserveCursorAndIndent()
-    " Save the current cursor position
-    let l:save_cursor = getpos(".")
-    " Save the current view
-    let l:save_view = winsaveview()
-    " Reindent the entire file
-    normal gg=G
-    " Restore the cursor position
-    call setpos('.', l:save_cursor)
-    " Restore the view
-    call winrestview(l:save_view)
-endfunction
-
-" Auto indent the entire file on save for PHP files, preserving cursor position
-autocmd BufWritePre *.php call PreserveCursorAndIndent()
-
 "lightline settings"
 set laststatus=2
 set noshowmode
