@@ -35,7 +35,7 @@ nnoremap <S-Up>   :<C-u>silent! move-2<CR>==
 nnoremap <S-Down> :<C-u>silent! move+<CR>==
 xnoremap <S-Up>   :<C-u>silent! '<,'>move-2<CR>gv=gv
 xnoremap <S-Down> :<C-u>silent! '<,'>move'>+<CR>gv=gv
-
+nnoremap <C-a> ggVG
 
 " Map y to use OSCYankOperator in normal mode
 nmap y <Plug>OSCYankOperator
